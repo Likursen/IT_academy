@@ -2,25 +2,24 @@
 for
 while
 do while*/
-package lesson1;
+package lesson_1_Homework;
 
 public class Task15 {
     public static void main(String[] args) {
-        for (int i = 1; i <= 100; i++) {
+        int hightLimit = 100;
+        for (int i = 1; i <= hightLimit; i++) {
             System.out.println(i);
         }
-
         int j = 1;
-        while (j <= 100) {
+        while (j <= hightLimit) {
             System.out.println(j);
             j++;
         }
-
-        int y = 1;
+        int k = 1;
         do {
-            System.out.println(y);
-            y++;
+            System.out.println(k);
+            k++;
         }
-        while (y <= 100);
+        while (k <= hightLimit);
     }
 }

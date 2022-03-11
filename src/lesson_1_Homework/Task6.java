@@ -1,9 +1,10 @@
 //Вывести на  экран все четные цифры от 1 до 100 не используя остаток от деления (используя только цикл for)
-package lesson1;
+package lesson_1_Homework;
 
 public class Task6 {
     public static void main(String[] args) {
-        for (int i = 0; i <= 100; i += 2)
+        int hightLimit = 100;
+        for (int i = 0; i <= hightLimit; i += 2)
             System.out.println(i);
     }
 }
