@@ -8,11 +8,11 @@ public class Car {
     private String model;
 
     public Car() {
-        setWeight(-1);
-        setEngineValue(-1);
-        setPower(-1);
-        setMark("Unknown mark");
-        setModel("Unknown model");
+        weight = -1;
+        engineValue = -1;
+        power = -1;
+        mark = "Unknown mark";
+        model = "Unknown model";
     }
 
     public Car(String mark, String model) {
@@ -27,7 +27,6 @@ public class Car {
         this.mark = mark;
         this.model = model;
     }
-
 
     public int getWeight() {
         return weight;
@@ -80,5 +79,3 @@ public class Car {
                 '}';
     }
 }
-
-
