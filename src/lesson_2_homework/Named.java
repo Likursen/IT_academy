@@ -1,14 +1,14 @@
 package lesson_2_homework;
 
 public interface Named {
-    String brand_1 = "Audi";
-    String brand_2 = "BMW";
-    String brand_3 = "Mercedes";
-    String brand_4 = "Tesla";
-    String brand_5 = "Renault";
-    String brand_6 = "Peugeot";
-    String brand_7 = "Opel";
-    String brand_8 = "Geely";
-    String brand_9 = "Volvo";
-    String brand_10 = "Lada";
+    String BRAND_1 = "Audi";
+    String BRAND_2 = "BMW";
+    String BRAND_3 = "Mercedes";
+    String BRAND_4 = "Tesla";
+    String BRAND_5 = "Renault";
+    String BRAND_6 = "Peugeot";
+    String BRAND_7 = "Opel";
+    String BRAND_8 = "Geely";
+    String BRAND_9 = "Volvo";
+    String BRAND_10 = "Lada";
 }
