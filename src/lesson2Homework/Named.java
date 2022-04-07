@@ -1,4 +1,4 @@
-package lesson_2_homework;
+package lesson2Homework;
 
 public interface Named {
     String BRAND_1 = "Audi";

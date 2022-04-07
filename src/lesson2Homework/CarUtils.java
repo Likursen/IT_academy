@@ -1,4 +1,4 @@
-package lesson_2_homework;
+package lesson2Homework;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -33,16 +33,16 @@ public class CarUtils {
     public static String getRandomBrand() {
         Random random = new Random();
         return switch (random.nextInt(10)) {
-            case 0 -> Named.brand_1;
-            case 1 -> Named.brand_2;
-            case 2 -> Named.brand_3;
-            case 3 -> Named.brand_4;
-            case 4 -> Named.brand_5;
-            case 5 -> Named.brand_6;
-            case 6 -> Named.brand_7;
-            case 7 -> Named.brand_8;
-            case 8 -> Named.brand_9;
-            case 9 -> Named.brand_10;
+            case 0 -> Named.BRAND_1;
+            case 1 -> Named.BRAND_2;
+            case 2 -> Named.BRAND_3;
+            case 3 -> Named.BRAND_4;
+            case 4 -> Named.BRAND_5;
+            case 5 -> Named.BRAND_6;
+            case 6 -> Named.BRAND_7;
+            case 7 -> Named.BRAND_8;
+            case 8 -> Named.BRAND_9;
+            case 9 -> Named.BRAND_10;
             default -> "Model error";
         };
     }

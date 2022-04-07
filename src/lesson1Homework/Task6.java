@@ -1,5 +1,5 @@
 //Вывести на  экран все четные цифры от 1 до 100 не используя остаток от деления (используя только цикл for)
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task6 {
     public static void main(String[] args) {

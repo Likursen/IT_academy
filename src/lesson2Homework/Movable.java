@@ -1,4 +1,4 @@
-package lesson_2_homework;
+package lesson2Homework;
 
 public interface Movable {
     void turn(String vector);

@@ -1,6 +1,6 @@
 /*Пройти циклом по числам от 1 до 12 и вывести название месяца,
 соответствующее каждому числу (используя цикл и оператор if else)*/
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task8 {
     public static void main(String[] args) {

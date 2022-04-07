@@ -2,7 +2,7 @@
 если первая переменная больше второй, то увеличьте её значение на 3,
 иначе увеличьте значение второй переменной на 8.
 В конце программы выведите значения обоих чисел на экран.*/
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task14 {
     public static void main(String[] args) {

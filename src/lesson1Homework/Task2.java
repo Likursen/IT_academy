@@ -1,5 +1,5 @@
 //Напишите метод, который будет увеличивать каждый элемент массива на 10%
-package lesson_1_Homework;
+package lesson1Homework;
 
 
 public class Task2 {

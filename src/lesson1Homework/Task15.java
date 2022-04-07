@@ -2,7 +2,7 @@
 for
 while
 do while*/
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task15 {
     public static void main(String[] args) {

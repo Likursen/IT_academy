@@ -1,6 +1,6 @@
 /* Напишите программу, которая вычисляет ваш вес на Луне с учетом того,
 что сила тяжести равна 16% от силы тяжести на Земле.*/
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task1 {
     public static void main(String[] args) {
