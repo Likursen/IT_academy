@@ -1,4 +1,4 @@
-package lesson_2_homework;
+package lesson2Homework;
 
 public class Car implements Movable, Comparable<Car> {
     private int weight;

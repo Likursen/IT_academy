@@ -1,6 +1,6 @@
 /*Напишите программу, которая будет считать количество
 часов, минут и секунд в n-ном количестве суток.*/
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task19 {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 /*Напишите метод, который будет проверять является ли число палиндромом
 (одинаково читающееся в обоих направлениях).*/
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task3 {
     public static void main(String[] args) {

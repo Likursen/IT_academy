@@ -1,5 +1,5 @@
 //Напишите программу с тремя переменными целого типа. Определить какое из них наибольшее.
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task11 {
     public static void main(String[] args) {

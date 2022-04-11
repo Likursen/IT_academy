@@ -1,6 +1,6 @@
 /*Напишите метод переводящий рубли в доллары по заданному курсу.
 В качестве аргументов укажите кол-во рублей и курс.*/
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task18 {
     public static void main(String[] args) {

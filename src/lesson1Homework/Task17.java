@@ -1,5 +1,5 @@
 //Все элементы массива поделить на значение наибольшего элемента этого массива.
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task17 {
     public static void main(String[] args) {

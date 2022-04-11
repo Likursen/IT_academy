@@ -1,5 +1,5 @@
 //Посчитать сумму цифр от 20 до 200 и результат вывести на экран (используя цикл for)
-package lesson_1_Homework;
+package lesson1Homework;
 
 public class Task7 {
     public static void main(String[] args) {
