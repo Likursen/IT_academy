@@ -1,6 +1,6 @@
 package lesson3Homework.objects;
 
-public class Book {
+public class Book{
     private final String DEFAULT_AUTHOR_NAME = "Author name unknown";
     private final String DEFAULT_AUTHOR_SURNAME = "Author surname unknown";
     private final String DEFAULT_AUTHOR_PATRONYMIC = "Author patronymic unknown";

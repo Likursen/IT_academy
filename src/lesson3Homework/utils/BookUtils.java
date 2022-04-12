@@ -5,7 +5,7 @@ import lesson3Homework.objects.Book;
 import java.util.*;
 
 public class BookUtils {
-    public static LinkedList<Book> BookGeneratorForTask1(int bookCount) {
+    public static LinkedList<Book> bookGeneratorForTask1(int bookCount) {
         LinkedList<Book> books = new LinkedList<>();
         for (int i = 0; i < bookCount; i++) {
             books.add(getRandomBook());
@@ -13,7 +13,7 @@ public class BookUtils {
         return books;
     }
 
-    public static HashSet<Book> BookGeneratorForTask2(int bookCount, int countRepeatedBook) {
+    public static HashSet<Book> bookGeneratorForTask2(int bookCount, int countRepeatedBook) {
         Book repeatedBook = getRandomBook();
         HashSet<Book> books = new HashSet<>();
         for (int i = 0; i < bookCount; i++) {
@@ -26,6 +26,36 @@ public class BookUtils {
         return books;
     }
 
+    public static void bookSorting(List<Book> books, BooksFieldsForSorting type) {
+        switch (type) {
+            case NAME:
+                Collections.sort(books, new Comparator<>() {
+                    @Override
+                    public int compare(Book o1, Book o2) {
+                        return o1.getAuthorName().compareTo(o2.getAuthorName());
+                    }
+                });
+                break;
+
+            case SURNAME:
+                Collections.sort(books, new Comparator<>() {
+                    @Override
+                    public int compare(Book o1, Book o2) {
+                        return o1.getAuthorSurname().compareTo(o2.getAuthorSurname());
+                    }
+                });
+                break;
+
+            case PATRONYMIC:
+                Collections.sort(books, new Comparator<>() {
+                    @Override
+                    public int compare(Book o1, Book o2) {
+                        return o1.getAuthorPatronymic().compareTo(o2.getAuthorPatronymic());
+                    }
+                });
+                break;
+        }
+    }
 
     public static Book getRandomBook() {
         return new Book(getRandomAuthorName(), getRandomAuthorSurname(), getaRandomAuthorPatronymic(), getRandomBookName(), getRandomPublicationDate());
@@ -37,18 +67,19 @@ public class BookUtils {
 
     public static void printStartsWithAVowel(Collection<Book> books) {
         String vowel = "AaEeYyUuIiOo";
+        char[] vowelChars = vowel.toCharArray();
         ArrayList<Book> booksInList = new ArrayList<>(books);
-        for (int i = 0; i < booksInList.size(); i++) {
-            for (int j = 0; j < vowel.length(); j++) {
-                if (firstSymbolOfWord(booksInList, i) == vowel.charAt(j)) {
-                    System.out.print(booksInList.get(i));
+        for (Book book : booksInList) {
+            for (char aChar : vowelChars) {
+                if (firstSymbolOfBookName(book) == aChar) {
+                    System.out.print(book);
                 }
             }
         }
     }
 
-    private static char firstSymbolOfWord(ArrayList<Book> books, int i) {
-        return books.get(i).getBookName().charAt(0);
+    private static char firstSymbolOfBookName(Book books) {
+        return books.getBookName().charAt(0);
     }
 
     private static int getRandomPublicationDate() {
@@ -56,25 +87,24 @@ public class BookUtils {
     }
 
     private static String getRandomAuthorName() {
-        return getRandomString();
+        return getRandomString(7);
     }
 
     private static String getRandomAuthorSurname() {
-        return getRandomString();
+        return getRandomString(8);
     }
 
     private static String getaRandomAuthorPatronymic() {
-        return getRandomString();
+        return getRandomString(5);
     }
 
     private static String getRandomBookName() {
-        return getRandomString();
+        return getRandomString(4);
     }
 
-    private static String getRandomString() {
+    private static String getRandomString(int targetStringLength) {
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
-        int targetStringLength = 5;
         Random random = new Random();
         StringBuilder buffer = new StringBuilder(targetStringLength);
         for (int i = 0; i < targetStringLength; i++) {
