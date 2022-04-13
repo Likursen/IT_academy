@@ -68,5 +68,4 @@ public class CarUtils {
         System.out.println("************SORTING************");
         Arrays.sort(array);
     }
-
 }

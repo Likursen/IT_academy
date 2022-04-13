@@ -3,6 +3,7 @@ package lesson3Homework.objects;
 public class Student implements Comparable<Student>{
     private final int DEFAULT_ID = 0;
     private final int DEFAULT_AGE = 0;
+
     private int id = DEFAULT_ID;
     private int age = DEFAULT_AGE;
     private String name;

@@ -1,10 +1,10 @@
 package lesson3Homework.objects;
 
 public class Book{
-    private final String DEFAULT_AUTHOR_NAME = "Author name unknown";
-    private final String DEFAULT_AUTHOR_SURNAME = "Author surname unknown";
-    private final String DEFAULT_AUTHOR_PATRONYMIC = "Author patronymic unknown";
-    private final String DEFAULT_BOOK_NAME = "Book name unknown";
+    private final String DEFAULT_AUTHOR_NAME = "Author name not set";
+    private final String DEFAULT_AUTHOR_SURNAME = "Author surname not set";
+    private final String DEFAULT_AUTHOR_PATRONYMIC = "Author patronymic not set";
+    private final String DEFAULT_BOOK_NAME = "Book name not set";
     private final int DEFAULT_PUBLICATION_DATE = 0;
 
     private String authorName = DEFAULT_AUTHOR_NAME;

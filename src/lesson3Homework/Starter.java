@@ -1,9 +1,9 @@
 package lesson3Homework;
 
-import lesson3Homework.objects.Student;
-import lesson3Homework.utils.StudentsUtils;
+import lesson3Homework.objects.User;
+import lesson3Homework.utils.UserUtils;
 
-import java.util.TreeSet;
+import java.util.List;
 
 public class Starter {
     public static void main(String[] args) {
@@ -23,10 +23,16 @@ public class Starter {
 //        BookUtils.bookSorting(booksForTask1, BooksFieldsForSorting.PATRONYMIC);
 //        BookUtils.printBookInfo(booksForTask1);
 
-        TreeSet <Student> students = StudentsUtils.studentsGeneration(10);
-        StudentsUtils.printStudentsInfo(students);
-        StudentsUtils.printEvenIdStudentsInfo(students);
-        StudentsUtils.deleteOddIdStudent(students);
-        StudentsUtils.printStudentsInfo(students);
+//        TreeSet <Student> students = StudentsUtils.studentsGeneration(10);
+//        StudentsUtils.printStudentsInfo(students);
+//        StudentsUtils.printEvenIdStudentsInfo(students);
+//        StudentsUtils.deleteOddIdStudent(students);
+//        StudentsUtils.printStudentsInfo(students);
+
+//        List<User> users = UserUtils.userGenerator(2);
+//        System.out.println(users);
+        User dima = UserUtils.getRandomUser();
+        System.out.println(dima);
+        UserUtils.setUserFriends(dima, 2);
     }
 }
