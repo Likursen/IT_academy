@@ -3,6 +3,8 @@ package lesson3Homework;
 import lesson3Homework.objects.User;
 import lesson3Homework.utils.UserUtils;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -31,7 +33,7 @@ public class Starter {
 //        StudentsUtils.printStudentsInfo(students);
 
         User user = UserUtils.getRandomUser();
-        UserUtils.addFriendToUser(user, 3);
-        UserUtils.printFriendOfUser(user, 3);
+        UserUtils.addFriendToUser(user, 5);
+        UserUtils.printHierarchyOfFriends(user, 5);
     }
 }

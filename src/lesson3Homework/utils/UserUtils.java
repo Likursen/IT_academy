@@ -2,6 +2,8 @@ package lesson3Homework.utils;
 
 import lesson3Homework.objects.User;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -21,19 +23,29 @@ public class UserUtils {
         }
     }
 
+    public static void printHierarchyOfFriends(User user, int generation) {
+        List<User> a = new LinkedList<>();
+        a.add(user);
+        printFriendOfUser(a, generation);
+    }
 
-    public static void printFriendOfUser(User user, int generation) {
-        List<User> userFriends = user.getFriends();
+    public static void printFriendOfUser(List<User> users, int generation) {
         if (generation == 0) {
             return;
         }
-        for (int i = 0; i < userFriends.size()-1; i++) {
-            System.out.print(userFriends.get(i).getName());
+        List<User> allFriends = new ArrayList<>();
+        System.out.println("Новое поколение ");
+        for (User user : users) {
+            List<User> userFriends = user.getFriends();
+            System.out.print(user.getName() + ": ");
+            for (User userFriend : userFriends) {
+                allFriends.add(userFriend);
+                System.out.print(userFriend.getName() + " ");
+            }
+            System.out.println();
         }
-        System.out.println("");
-        for (User friend : userFriends) {
-            printFriendOfUser(friend, generation - 1);
-        }
+        System.out.println();
+        printFriendOfUser(allFriends, generation - 1);
     }
 
 
