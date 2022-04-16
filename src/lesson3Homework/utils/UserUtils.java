@@ -2,47 +2,49 @@ package lesson3Homework.utils;
 
 import lesson3Homework.objects.User;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 public class UserUtils {
-    public static User setUserFriends(User user, int count) {
-        int ii = count;
-       for (int i = 0; i < count; i++) {
-            user.setFriends(addFriends(user.getFriends()));
-       }
-        System.out.println(user.getName());
-        System.out.println(user.getFriends());
+    private static final int DEFAULT_COUNT_OF_FRIENDS = 2;
 
-        return user;
-    }
-//        setUserFriends(user, count--);
-
-
-    public static List<User> addFriends(List<User> users) {
-        for (int i = 0; i < 3; i++) {
-            users.add(getRandomUser());
+    public static void addFriendToUser(User user, int generation) {
+        List<User> userFriends = user.getFriends();
+        if (generation == 0) {
+            return;
         }
-        return users;
-    }
-
-
-    public static List<User> userGenerator(int countOfUsers) {
-        List<User> users = new LinkedList<>();
-        for (int i = 0; i < countOfUsers; i++) {
-            users.add(getRandomUser());
+        for (int i = 0; i < DEFAULT_COUNT_OF_FRIENDS; i++) {
+            userFriends.add(getRandomUser());
         }
-        return users;
+        for (User friend : userFriends) {
+            addFriendToUser(friend, generation - 1);
+        }
     }
+
+
+    public static void printFriendOfUser(User user, int generation) {
+        List<User> userFriends = user.getFriends();
+        if (generation == 0) {
+            return;
+        }
+        for (int i = 0; i < userFriends.size()-1; i++) {
+            System.out.print(userFriends.get(i).getName());
+        }
+        System.out.println("");
+        for (User friend : userFriends) {
+            printFriendOfUser(friend, generation - 1);
+        }
+    }
+
 
     public static User getRandomUser() {
         return new User(getRandomId(), getRandomName(), getRandomString());
     }
 
     private static long getRandomId() {
-        int boundOfId = 999;
-        return new Random().nextLong(boundOfId);
+        int minId = 100;
+        int maxId = 999;
+        return new Random().nextLong(minId, maxId);
     }
 
     private static String getRandomName() {

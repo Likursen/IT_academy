@@ -4,6 +4,7 @@ import lesson3Homework.objects.User;
 import lesson3Homework.utils.UserUtils;
 
 import java.util.List;
+import java.util.Random;
 
 public class Starter {
     public static void main(String[] args) {
@@ -29,10 +30,8 @@ public class Starter {
 //        StudentsUtils.deleteOddIdStudent(students);
 //        StudentsUtils.printStudentsInfo(students);
 
-//        List<User> users = UserUtils.userGenerator(2);
-//        System.out.println(users);
-        User dima = UserUtils.getRandomUser();
-        System.out.println(dima);
-        UserUtils.setUserFriends(dima, 2);
+        User user = UserUtils.getRandomUser();
+        UserUtils.addFriendToUser(user, 3);
+        UserUtils.printFriendOfUser(user, 3);
     }
 }

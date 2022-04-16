@@ -14,16 +14,24 @@ public class User {
     private String name = DEFAULT_USER_NAME;
     private String surname = DEFAULT_USER_SURNAME;
     private List<User> friends = DEFAULT_USER_FRIEND;
-    private static String[] names = {"Dima", "Katya", "Zhenya", "Perviy", "Vtoroy"};
+    private static String[] names = {"первый", "второй", "третий", "четвертрый", "пятый",
+            "шестой", "седьмой", "восьмой", "девятый", "нулевой"};
+    public static final int DEFAULT_COUNT_OF_FRIENDS = 2;
 
     public User() {
+    }
+
+    public User(long id, String name, String surname, List<User> friends) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.friends = friends;
     }
 
     public User(long id, String name, String surname) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-    //    this.friends = friends;
     }
 
     public Long getId() {
@@ -63,7 +71,7 @@ public class User {
     }
 
     public void setNames(String[] names) {
-        this.names = names;
+        User.names = names;
     }
 
     @Override
