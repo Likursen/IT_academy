@@ -1,11 +1,12 @@
-package lesson3Homework.utils;
+package lesson3Homework.utils.bookUtils;
 
-import lesson3Homework.objects.Book;
+import lesson3Homework.domain.Book;
 
 import java.util.*;
 
 public class BookUtils {
     public static LinkedList<Book> bookGeneratorForTask1(int bookCount) {
+        //method return LinkedList collection of random book with given size
         LinkedList<Book> books = new LinkedList<>();
         for (int i = 0; i < bookCount; i++) {
             books.add(getRandomBook());
@@ -14,6 +15,7 @@ public class BookUtils {
     }
 
     public static HashSet<Book> bookGeneratorForTask2(int bookCount, int countRepeatedBook) {
+        //method return HashSet collection of random book with given size and count of repeated books
         Book repeatedBook = getRandomBook();
         HashSet<Book> books = new HashSet<>();
         for (int i = 0; i < bookCount; i++) {
@@ -27,9 +29,12 @@ public class BookUtils {
     }
 
     public static void bookSorting(List<Book> books, BooksFieldsForSorting type) {
+        //method return book collection after sorting by given fields
+        System.out.println("\nSorted by " + type);
         switch (type) {
             case NAME:
-                Collections.sort(books, new Comparator<>() {
+                //sorting collection by name
+                books.sort(new Comparator<>() {
                     @Override
                     public int compare(Book o1, Book o2) {
                         return o1.getAuthorName().compareTo(o2.getAuthorName());
@@ -38,7 +43,8 @@ public class BookUtils {
                 break;
 
             case SURNAME:
-                Collections.sort(books, new Comparator<>() {
+                //sorting collection by surname
+                books.sort(new Comparator<>() {
                     @Override
                     public int compare(Book o1, Book o2) {
                         return o1.getAuthorSurname().compareTo(o2.getAuthorSurname());
@@ -47,7 +53,8 @@ public class BookUtils {
                 break;
 
             case PATRONYMIC:
-                Collections.sort(books, new Comparator<>() {
+                //sorting collection by patronymic
+                books.sort(new Comparator<>() {
                     @Override
                     public int compare(Book o1, Book o2) {
                         return o1.getAuthorPatronymic().compareTo(o2.getAuthorPatronymic());
@@ -58,51 +65,67 @@ public class BookUtils {
     }
 
     public static Book getRandomBook() {
-        return new Book(getRandomAuthorName(), getRandomAuthorSurname(), getaRandomAuthorPatronymic(), getRandomBookName(), getRandomPublicationDate());
+        //method generate book with random parameters
+        return new Book(getRandomAuthorName(), getRandomAuthorSurname(), getaRandomAuthorPatronymic(), getRandomBookTitle(), getRandomPublicationDate());
     }
 
     public static void printBookInfo(Collection<Book> books) {
+        //method print info about given collection books
         System.out.println(books);
     }
 
-    public static void printStartsWithAVowel(Collection<Book> books) {
-        String vowel = "AaEeYyUuIiOo";
+    public static void printBookWhoTitleStartsAVowel(Collection<Book> books) {
+        //method print books from given collection, who title starts with a vowel
+        String vowel = "AaEeYyUuIiOo";//list of all vowel chars
         char[] vowelChars = vowel.toCharArray();
         ArrayList<Book> booksInList = new ArrayList<>(books);
         for (Book book : booksInList) {
             for (char aChar : vowelChars) {
-                if (firstSymbolOfBookName(book) == aChar) {
+                if (firstSymbolOfBookTitle(book) == aChar) {
                     System.out.print(book);
                 }
             }
         }
     }
 
-    private static char firstSymbolOfBookName(Book books) {
-        return books.getBookName().charAt(0);
+    private static char firstSymbolOfBookTitle(Book books) {
+        //method return first Symbol of given book title
+        return books.getBookTitle().charAt(0);
     }
 
     private static int getRandomPublicationDate() {
-        return new Random().nextInt(1400, 2022);
+        //method return random year ranging from minimum year to maximum year
+        int minLimitYear = 1400;
+        int maxLimitYear = 2022;
+        return new Random().nextInt(minLimitYear, maxLimitYear);
     }
 
     private static String getRandomAuthorName() {
-        return getRandomString(7);
+        //method return random string with default author name length
+        int defaultAuthorNameLength = 7;
+        return getRandomString(defaultAuthorNameLength);
     }
 
     private static String getRandomAuthorSurname() {
-        return getRandomString(8);
+        //method return random string with default author surname length
+        int defaultAuthorSurnameLength = 8;
+        return getRandomString(defaultAuthorSurnameLength);
     }
 
     private static String getaRandomAuthorPatronymic() {
-        return getRandomString(5);
+        //method return random string with default author patronymic length
+        int defaultAuthorPatronymicLength = 5;
+        return getRandomString(defaultAuthorPatronymicLength);
     }
 
-    private static String getRandomBookName() {
-        return getRandomString(4);
+    private static String getRandomBookTitle() {
+        //method return random string with default book title length
+        int defaultBookTitleLength = 4;
+        return getRandomString(defaultBookTitleLength);
     }
 
     private static String getRandomString(int targetStringLength) {
+        //method return random lower case string with given length
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
         Random random = new Random();

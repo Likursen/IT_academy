@@ -1,26 +1,26 @@
-package lesson3Homework.objects;
+package lesson3Homework.domain;
 
-public class Book{
+public class Book {
     private final String DEFAULT_AUTHOR_NAME = "Author name not set";
     private final String DEFAULT_AUTHOR_SURNAME = "Author surname not set";
     private final String DEFAULT_AUTHOR_PATRONYMIC = "Author patronymic not set";
-    private final String DEFAULT_BOOK_NAME = "Book name not set";
+    private final String DEFAULT_BOOK_TITLE = "Book title not set";
     private final int DEFAULT_PUBLICATION_DATE = 0;
 
     private String authorName = DEFAULT_AUTHOR_NAME;
     private String authorSurname = DEFAULT_AUTHOR_SURNAME;
     private String authorPatronymic = DEFAULT_AUTHOR_PATRONYMIC;
-    private String bookName = DEFAULT_BOOK_NAME;
+    private String bookTitle = DEFAULT_BOOK_TITLE;
     private int publicationDate = DEFAULT_PUBLICATION_DATE;
 
     public Book() {
     }
 
-    public Book(String authorName,String authorSurname, String authorPatronymic, String bookName, int publicationDate) {
+    public Book(String authorName, String authorSurname, String authorPatronymic, String bookName, int publicationDate) {
         this.authorName = authorName;
         this.authorSurname = authorSurname;
         this.authorPatronymic = authorPatronymic;
-        this.bookName = bookName;
+        this.bookTitle = bookName;
         this.publicationDate = publicationDate;
     }
 
@@ -32,12 +32,12 @@ public class Book{
         this.authorName = authorName;
     }
 
-    public String getBookName() {
-        return bookName;
+    public String getBookTitle() {
+        return bookTitle;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
     }
 
     public int getPublicationDate() {
@@ -75,7 +75,7 @@ public class Book{
         if (!authorName.equals(book.authorName)) return false;
         if (!authorSurname.equals(book.authorSurname)) return false;
         if (!authorPatronymic.equals(book.authorPatronymic)) return false;
-        return bookName.equals(book.bookName);
+        return bookTitle.equals(book.bookTitle);
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Book{
         int result = authorName.hashCode();
         result = 31 * result + authorSurname.hashCode();
         result = 31 * result + authorPatronymic.hashCode();
-        result = 31 * result + bookName.hashCode();
+        result = 31 * result + bookTitle.hashCode();
         result = 31 * result + publicationDate;
         return result;
     }
@@ -91,11 +91,11 @@ public class Book{
     @Override
     public String toString() {
         return "\nBook{" +
-                "authorName='" + authorName + '\'' +
-                ", authorSurname='" + authorSurname + '\'' +
-                ", authorPatronymic='" + authorPatronymic + '\'' +
-                ", bookName='" + bookName + '\'' +
-                ", publicationDate=" + publicationDate +
+                "author name='" + authorName + '\'' +
+                ", author surname='" + authorSurname + '\'' +
+                ", author patronymic='" + authorPatronymic + '\'' +
+                ", book title='" + bookTitle + '\'' +
+                ", publication date=" + publicationDate +
                 '}';
     }
 }

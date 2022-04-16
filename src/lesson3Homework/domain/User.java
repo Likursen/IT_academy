@@ -1,6 +1,5 @@
-package lesson3Homework.objects;
+package lesson3Homework.domain;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,7 +15,6 @@ public class User {
     private List<User> friends = DEFAULT_USER_FRIEND;
     private static String[] names = {"первый", "второй", "третий", "четвертрый", "пятый",
             "шестой", "седьмой", "восьмой", "девятый", "нулевой"};
-    public static final int DEFAULT_COUNT_OF_FRIENDS = 2;
 
     public User() {
     }
