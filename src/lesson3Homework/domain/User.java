@@ -5,16 +5,16 @@ import java.util.List;
 
 public class User {
     private final long DEFAULT_USER_ID = 0;
-    private final String DEFAULT_USER_NAME = "User name not set";
-    private final String DEFAULT_USER_SURNAME = "User surname not set";
+    private final String DEFAULT_USER_NAME = "Name not set";
+    private final String DEFAULT_USER_SURNAME = "Surname not set";
     private final List<User> DEFAULT_USER_FRIEND = new LinkedList<>();
 
     private long id = DEFAULT_USER_ID;
     private String name = DEFAULT_USER_NAME;
     private String surname = DEFAULT_USER_SURNAME;
     private List<User> friends = DEFAULT_USER_FRIEND;
-    private static String[] names = {"первый", "второй", "третий", "четвертрый", "пятый",
-            "шестой", "седьмой", "восьмой", "девятый", "нулевой"};
+    private static String[] names = {"Oliver", "Jack", "Harry", "Jacob", "Charley",
+            "Thomas", "George", "Oscar", "Markus", "Eugene"};
 
     public User() {
     }
