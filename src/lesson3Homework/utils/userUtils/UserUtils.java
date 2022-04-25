@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-public class UserUtils {
+public class UserUtils implements UserNames {
     private static final int DEFAULT_COUNT_OF_FRIENDS = 2;    //default count friends for every user
 
     //method adds friend to given user up to the given level of nesting
@@ -62,11 +62,11 @@ public class UserUtils {
         return new Random().nextInt(boundOfId);
     }
 
-    //method return random name from given in User class names array
+//    //method return random name from given in User class names array
     private static String getRandomName() {
         Random random = new Random();
-        int randomIndex = random.nextInt(User.getNames().length);
-        return User.getNames()[randomIndex];
+        int randomIndex = random.nextInt(UserNames.names.length);
+        return UserNames.names[randomIndex];
     }
 
     //method return random lower case string with default length

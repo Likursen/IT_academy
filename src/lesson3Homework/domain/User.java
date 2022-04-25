@@ -13,8 +13,6 @@ public class User {
     private String name = DEFAULT_USER_NAME;
     private String surname = DEFAULT_USER_SURNAME;
     private List<User> friends = DEFAULT_USER_FRIEND;
-    private static String[] names = {"Oliver", "Jack", "Harry", "Jacob", "Charley",
-            "Thomas", "George", "Oscar", "Markus", "Eugene"};
 
     public User() {
     }
@@ -64,13 +62,6 @@ public class User {
         this.friends = friends;
     }
 
-    public static String[] getNames() {
-        return names;
-    }
-
-    public void setNames(String[] names) {
-        User.names = names;
-    }
 
     @Override
     public String toString() {
