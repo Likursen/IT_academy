@@ -5,8 +5,8 @@ import lesson3Homework.domain.Book;
 import java.util.*;
 
 public class BookUtils {
+    //method return LinkedList collection of random book with given size
     public static LinkedList<Book> bookGeneratorForTask1(int bookCount) {
-        //method return LinkedList collection of random book with given size
         LinkedList<Book> books = new LinkedList<>();
         for (int i = 0; i < bookCount; i++) {
             books.add(getRandomBook());
@@ -14,8 +14,8 @@ public class BookUtils {
         return books;
     }
 
+    //method return HashSet collection of random book with given size and count of repeated books
     public static HashSet<Book> bookGeneratorForTask2(int bookCount, int countRepeatedBook) {
-        //method return HashSet collection of random book with given size and count of repeated books
         Book repeatedBook = getRandomBook();
         HashSet<Book> books = new HashSet<>();
         for (int i = 0; i < bookCount; i++) {
@@ -28,8 +28,8 @@ public class BookUtils {
         return books;
     }
 
+    //method return book collection after sorting by given fields
     public static void bookSorting(List<Book> books, BooksFieldsForSorting type) {
-        //method return book collection after sorting by given fields
         System.out.println("\nSorted by " + type);
         switch (type) {
             case NAME:
@@ -64,18 +64,18 @@ public class BookUtils {
         }
     }
 
+    //method generate book with random parameters
     public static Book getRandomBook() {
-        //method generate book with random parameters
         return new Book(getRandomAuthorName(), getRandomAuthorSurname(), getaRandomAuthorPatronymic(), getRandomBookTitle(), getRandomPublicationDate());
     }
 
+    //method print info about given collection books
     public static void printBookInfo(Collection<Book> books) {
-        //method print info about given collection books
         System.out.println(books);
     }
 
+    //method print books from given collection, who title starts with a vowel
     public static void printBookWhoTitleStartsAVowel(Collection<Book> books) {
-        //method print books from given collection, who title starts with a vowel
         String vowel = "AaEeYyUuIiOo";//list of all vowel chars
         char[] vowelChars = vowel.toCharArray();
         ArrayList<Book> booksInList = new ArrayList<>(books);
@@ -88,44 +88,44 @@ public class BookUtils {
         }
     }
 
+    //method return first Symbol of given book title
     private static char firstSymbolOfBookTitle(Book books) {
-        //method return first Symbol of given book title
         return books.getBookTitle().charAt(0);
     }
 
+    //method return random year ranging from minimum year to maximum year
     private static int getRandomPublicationDate() {
-        //method return random year ranging from minimum year to maximum year
         int minLimitYear = 1400;
         int maxLimitYear = 2022;
         return new Random().nextInt(minLimitYear, maxLimitYear);
     }
 
+    //method return random string with default author name length
     private static String getRandomAuthorName() {
-        //method return random string with default author name length
         int defaultAuthorNameLength = 7;
         return getRandomString(defaultAuthorNameLength);
     }
 
+    //method return random string with default author surname length
     private static String getRandomAuthorSurname() {
-        //method return random string with default author surname length
         int defaultAuthorSurnameLength = 8;
         return getRandomString(defaultAuthorSurnameLength);
     }
 
+    //method return random string with default author patronymic length
     private static String getaRandomAuthorPatronymic() {
-        //method return random string with default author patronymic length
         int defaultAuthorPatronymicLength = 5;
         return getRandomString(defaultAuthorPatronymicLength);
     }
 
+    //method return random string with default book title length
     private static String getRandomBookTitle() {
-        //method return random string with default book title length
         int defaultBookTitleLength = 4;
         return getRandomString(defaultBookTitleLength);
     }
 
+    //method return random lower case string with given length
     private static String getRandomString(int targetStringLength) {
-        //method return random lower case string with given length
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
         Random random = new Random();

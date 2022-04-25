@@ -10,8 +10,8 @@ import java.util.Random;
 public class UserUtils {
     private static final int DEFAULT_COUNT_OF_FRIENDS = 2;    //default count friends for every user
 
+    //method adds friend to given user up to the given level of nesting
     public static void addFriendToUser(User user, int nestingLevel) {
-        //method adds friend to given user up to the given level of nesting
         List<User> userFriends = user.getFriends();
         if (nestingLevel == 0) {
             return;
@@ -24,15 +24,15 @@ public class UserUtils {
         }
     }
 
+    //method formed friendship hierarchy of given user up to the given level of nesting
     public static void printFriendOfUser(User user, int nestingLevel) {
-        //method formed friendship hierarchy of given user up to the given level of nesting
         List<User> users = new LinkedList<>();
         users.add(user);
         printHierarchyOfFriends(users, nestingLevel);
     }
 
+    //method print friendship hierarchy up to the given level of nesting
     public static void printHierarchyOfFriends(List<User> users, int generation) {
-        //method print friendship hierarchy up to the given level of nesting
         if (generation == 0) {
             return;
         }
@@ -51,26 +51,26 @@ public class UserUtils {
         printHierarchyOfFriends(allFriends, generation - 1);
     }
 
+    //method return user with random parameters
     public static User getRandomUser() {
-        //method return user with random parameters
         return new User(getRandomId(), getRandomName(), getRandomString());
     }
 
+    //method return random ID the order
     private static long getRandomId() {
-        //method return random ID the order
         int boundOfId = 999;
         return new Random().nextInt(boundOfId);
     }
 
+    //method return random name from given in User class names array
     private static String getRandomName() {
-        //method return random name from given in User class names array
         Random random = new Random();
         int randomIndex = random.nextInt(User.getNames().length);
         return User.getNames()[randomIndex];
     }
 
+    //method return random lower case string with default length
     private static String getRandomString() {
-        //method return random lower case string with default length
         int targetStringLength = 4;
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
