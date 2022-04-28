@@ -1,4 +1,4 @@
-package lesson3Homework.utils.bookUtils;
+package lesson3Homework.utils.book;
 
 public enum BooksFieldsForSorting {
     //book fields by which sorting is performed

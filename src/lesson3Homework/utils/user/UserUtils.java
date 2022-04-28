@@ -1,4 +1,4 @@
-package lesson3Homework.utils.userUtils;
+package lesson3Homework.utils.user;
 
 import lesson3Homework.domain.User;
 

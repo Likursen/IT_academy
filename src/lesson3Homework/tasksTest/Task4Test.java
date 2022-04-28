@@ -1,7 +1,7 @@
 package lesson3Homework.tasksTest;
 
 import lesson3Homework.domain.Student;
-import lesson3Homework.utils.studentUtils.StudentsUtils;
+import lesson3Homework.utils.student.StudentsUtils;
 
 import java.util.TreeSet;
 

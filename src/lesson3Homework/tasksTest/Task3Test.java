@@ -1,8 +1,8 @@
 package lesson3Homework.tasksTest;
 
 import lesson3Homework.domain.Book;
-import lesson3Homework.utils.bookUtils.BookUtils;
-import lesson3Homework.utils.bookUtils.BooksFieldsForSorting;
+import lesson3Homework.utils.book.BookUtils;
+import lesson3Homework.utils.book.BooksFieldsForSorting;
 
 import java.util.LinkedList;
 
