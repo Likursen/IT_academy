@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 public class CallCenter extends Thread {
     private static final int DEFAULT_OPERATORS_COUNT = 4;
     private static final Operator[] OPERATORS = new Operator[DEFAULT_OPERATORS_COUNT];
+    public static boolean isWork = true;
     ClientQueue clientQueue = new ClientQueue();
 
     @Override
@@ -20,10 +21,21 @@ public class CallCenter extends Thread {
         for (int i = 0; i < OPERATORS.length; i++) {
             executorService.submit(new Operator(i + 1));
         }
-
-//        if (ClientQueue.clientQueue.isEmpty()) {
-////            executorService.shutdownNow();
-//            System.out.println("STOP Колл-центр завершил работу");
-//        }
+        executorService.shutdown();
     }
+
+//    public static void closeCallCenter() {
+//
+//        int counter = 0;
+//        for (Operator operator : OPERATORS) {
+//            if (operator.isFree()) {
+//                counter++;
+//            }
+//            if (counter == DEFAULT_OPERATORS_COUNT) {
+//                System.out.println("Колл центр завершил работу");
+//                isWork = false;
+//            }
+//
+//        }
+//    }
 }

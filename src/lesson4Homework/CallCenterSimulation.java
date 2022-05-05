@@ -6,7 +6,7 @@ public class CallCenterSimulation {
         callCenter.start();
 
         try {
-            Thread.sleep(50);
+            Thread.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

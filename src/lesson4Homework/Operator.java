@@ -2,6 +2,7 @@ package lesson4Homework;
 
 public class Operator implements Runnable {
     private int operatorId;
+    private boolean isFree = true;
 
     public Operator(int id) {
         System.out.println("Оператор " + id + " начал работу");
@@ -16,21 +17,32 @@ public class Operator implements Runnable {
         this.operatorId = operatorId;
     }
 
+    public boolean isFree() {
+        return isFree;
+    }
+
+    public void setFree(boolean free) {
+        isFree = free;
+    }
+
     @Override
     public void run() {
+        while (CallCenter.isWork) {
             try {
-        while (true)
+         //   CallCenter.closeCallCenter();
                 solve();
             } catch (InterruptedException e) {
                 System.out.println("ошбика в операторе");
                 e.printStackTrace();
             }
-
+        }
     }
 
     private void solve() throws InterruptedException {
-        Thread.sleep(5);
+        isFree = false;
+        Thread.sleep(200);
         System.out.println("оператор №" + operatorId + " соединен с клиентом " + ClientQueue.clientQueue.take().getClientId());
+        isFree = true;
     }
 
     @Override
