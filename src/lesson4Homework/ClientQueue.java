@@ -18,7 +18,7 @@ public class ClientQueue extends Thread {
 
     private static void queueFactory() throws InterruptedException {
         for (int i = 0; i < DEFAULT_CLIENTS_COUNT; i++) {
-            Thread.sleep(100);
+            Thread.sleep(50);
             clientQueue.put(new Client(i + 1));
             System.out.println("клиент " + (i + 1) + " стал в очередь");
         }

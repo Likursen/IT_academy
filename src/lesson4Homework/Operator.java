@@ -18,16 +18,38 @@ public class Operator implements Runnable {
 
     @Override
     public void run() {
-        try {
-            while (true) solve();
-        } catch (InterruptedException e) {
-            System.out.println("ошбика в операторе");
-            e.printStackTrace();
-        }
+            try {
+        while (true)
+                solve();
+            } catch (InterruptedException e) {
+                System.out.println("ошбика в операторе");
+                e.printStackTrace();
+            }
+
     }
 
     private void solve() throws InterruptedException {
+        Thread.sleep(5);
         System.out.println("оператор №" + operatorId + " соединен с клиентом " + ClientQueue.clientQueue.take().getClientId());
-                Thread.sleep(500);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Operator operator)) return false;
+
+        return operatorId == operator.operatorId;
+    }
+
+    @Override
+    public int hashCode() {
+        return operatorId;
+    }
+
+    @Override
+    public String toString() {
+        return "Operator{" +
+                "operatorId=" + operatorId +
+                '}';
     }
 }

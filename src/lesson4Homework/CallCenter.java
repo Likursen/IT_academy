@@ -5,20 +5,25 @@ import java.util.concurrent.Executors;
 
 public class CallCenter extends Thread {
     private static final int DEFAULT_OPERATORS_COUNT = 4;
-    private static final Operator[] operators = new Operator[DEFAULT_OPERATORS_COUNT];
+    private static final Operator[] OPERATORS = new Operator[DEFAULT_OPERATORS_COUNT];
+    ClientQueue clientQueue = new ClientQueue();
 
     @Override
     public void run() {
-        ClientQueue clientQueue = new ClientQueue();
         System.out.println("Колл-центр начал работу");
+        operatorsFactory(DEFAULT_OPERATORS_COUNT);
         clientQueue.start();
+    }
 
-        ExecutorService executorService = Executors.newFixedThreadPool(DEFAULT_OPERATORS_COUNT);
-        for (int i = 0; i < operators.length; i++) {
+    public static void operatorsFactory(int count) {
+        ExecutorService executorService = Executors.newFixedThreadPool(count);
+        for (int i = 0; i < OPERATORS.length; i++) {
             executorService.submit(new Operator(i + 1));
-
         }
-        System.out.println("Колл-центр завершил работу");
-        executorService.shutdown();
+
+//        if (ClientQueue.clientQueue.isEmpty()) {
+////            executorService.shutdownNow();
+//            System.out.println("STOP Колл-центр завершил работу");
+//        }
     }
 }
