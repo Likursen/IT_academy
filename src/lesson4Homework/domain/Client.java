@@ -1,4 +1,4 @@
-package lesson4Homework;
+package lesson4Homework.domain;
 
 public class Client {
     int clientId;
