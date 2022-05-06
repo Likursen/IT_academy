@@ -1,8 +1,12 @@
 package lesson4Homework;
 
+import java.util.Objects;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
 public class Operator implements Runnable {
     private int operatorId;
-    private boolean isFree = true;
+    Random timeToSolve = new Random();
 
     public Operator(int id) {
         System.out.println("Оператор " + id + " начал работу");
@@ -17,32 +21,22 @@ public class Operator implements Runnable {
         this.operatorId = operatorId;
     }
 
-    public boolean isFree() {
-        return isFree;
-    }
-
-    public void setFree(boolean free) {
-        isFree = free;
-    }
-
     @Override
     public void run() {
         while (CallCenter.isWork) {
             try {
-         //   CallCenter.closeCallCenter();
                 solve();
             } catch (InterruptedException e) {
-                System.out.println("ошбика в операторе");
+                System.out.println("ошибка в операторе");
                 e.printStackTrace();
             }
         }
     }
 
     private void solve() throws InterruptedException {
-        isFree = false;
-        Thread.sleep(200);
-        System.out.println("оператор №" + operatorId + " соединен с клиентом " + ClientQueue.clientQueue.take().getClientId());
-        isFree = true;
+        System.out.println("оператор №" + operatorId + " соединен с клиентом " +
+                Objects.requireNonNull(ClientQueue.clientQueue.poll(1000, TimeUnit.MILLISECONDS)).clientId);
+        Thread.sleep(timeToSolve.nextInt(100, 500));
     }
 
     @Override
