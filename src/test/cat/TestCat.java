@@ -1,4 +1,4 @@
-package test.catTest;
+package test.cat;
 
 public class TestCat {
     public static void main(String[] args) {

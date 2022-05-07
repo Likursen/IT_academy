@@ -1,4 +1,4 @@
-package test.catTest;
+package test.cat;
 
 public class Cat {
     private int age;
