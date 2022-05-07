@@ -1,7 +1,5 @@
 package test.annotation.testClass;
 
-import test.annotation.Task2Anno;
-
 public class ClassWithoutAnno3 {
     int a = 2;
     int b = 6;

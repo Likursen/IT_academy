@@ -1,6 +1,6 @@
 package test.annotation.testClass;
 
-import test.annotation.Task2Anno;
+import test.annotation.annotation.Task2Anno;
 
 @Task2Anno()
 public class ClassWithAnno2 {

@@ -1,6 +1,6 @@
 package test.annotation.testClass;
 
-import test.annotation.Task2Anno;
+import test.annotation.annotation.Task2Anno;
 
 @Task2Anno()
 public class ClassWithAnno3 {
@@ -15,7 +15,7 @@ public class ClassWithAnno3 {
     }
 
     @Task2Anno
-    private static int methodWithoutAnno3(int a, int b) {
+    private static int methodWithAnno31(int a, int b) {
         return a / -b;
     }
 }
